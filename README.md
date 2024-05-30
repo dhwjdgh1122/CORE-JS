@@ -18,7 +18,7 @@
 - 예시: 참고 자료 관리 도구를 특정 책상에 설치
 
 DataTypes    
-link: 
+link: [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/README.md)
 
 
 
