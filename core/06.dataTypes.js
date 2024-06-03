@@ -75,7 +75,7 @@ const arr = [1,2,3];
 
 function 더하기(a,b){   // 함수는 무조건 return을 써야하나요 그건 아니다 함수가 리턴이 없으면 undefined을 반환한다
   
-  
+  console.log(a+b);
 }
 // this
 
