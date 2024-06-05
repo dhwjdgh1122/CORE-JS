@@ -19,7 +19,7 @@
 
 ### Basic    
 
-- [x] Code Structure [바로가기]
+- [x] Code Structure [Code Structure.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Code-Structure.md)
 - [x] Variable [Variable README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/variable.md)
 - [x] Strict Mode [Strict Mode.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Strict%20Mode.md)
 - [x] Global This [바로가기]
