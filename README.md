@@ -25,7 +25,7 @@
 - [x] Global This [바로가기]
 - [x] Legacy Var [바로가기]
 - [x] DataTypes [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/README.md)
-- [x] Type Conversion [바로가기]
+- [x] Type Conversion [Type Conversion README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Type-Conversion.md)
 
 ---
 
