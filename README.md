@@ -23,7 +23,7 @@
 - [x] Variable [Variable README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/variable.md)
 - [x] Strict Mode [Strict Mode.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Strict%20Mode.md)
 - [x] Global This [Global This.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Global%20This.md)
-- [x] Legacy Var [바로가기]
+- [x] Legacy Var [Legact var.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Legacy%20var.md)
 - [x] DataTypes [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/DataTypes.md)
 - [x] Type Conversion [Type Conversion README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Type-Conversion.md)
 
