@@ -30,22 +30,22 @@
 ---
 
 ### Operations
-- [x] Operations (기본 연산자) [바로가기]
-- [x] Operations (비교 연산자) [바로가기]
+- [x] Operations (기본 연산자) []
+- [x] Operations (비교 연산자) []
 
 
 ---
 ### Condition
-- [x] Condition (if조건문) [바로가기]
-- [x] Condition (논리연산자) [바로가기]
-- [x] Condition (switch..case) [바로가기]
-- [x] Condition (nullish) [바로가기]
+- [x] Condition (if조건문) []
+- [x] Condition (논리연산자) []
+- [x] Condition (switch..case) []
+- [x] Condition (nullish) []
 
 
 ---
 ### Loop
-- [x] loop (while) [바로가기]
-- [x] loop (do..while) [바로가기]
-- [x] loop (for) [바로가기]
-- [x] loop (for...in) [바로가기]
-- [x] loop (for...of) [바로가기]
+- [x] loop (while) []
+- [x] loop (do..while) []
+- [x] loop (for) []
+- [x] loop (for...in) []
+- [x] loop (for...of) []
