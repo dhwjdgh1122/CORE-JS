@@ -5,7 +5,7 @@
 
 ## `live-server`    
 - `live-server`를 그냥 열어서 확인하면 되는데 왜 `json`에 다운해서 열었는지? 이유에 대해서    
-기존의 내가 자주 사용하던 `live-server`는 `vscode`의 확장 프로그램이다, 누군가가 그 파일을 달라고 했을 때, vscode만 깔려있는 사람은 확인을 못함 why? `live-server`가 다운로드 되지 않았으니까, 그래서 `live-server`를 다운받은 형태로 보내줘야함
+기존의 내가 자주 사용하던 `live-server`는 `vscode`의 확장 프로그램이다, 누군가가 그 파일을 달라고 했을 때, `vscode`만 깔려있는 사람은 확인을 못함 why? `live-server`가 다운로드 되지 않았으니까, 그래서 `live-server`를 다운받은 형태로 보내줘야함
 그래서 `json` 파일에 `npx live-server clien` 로 다운 받아 논거임
 결국 협업을 위해서이다
 
@@ -17,13 +17,35 @@
 - 도서관 비유: 특정 책상에서만 사용할 수 있는 도구 설치, 다른 책상에서는 사용 X
 - 예시: 참고 자료 관리 도구를 특정 책상에 설치
 
-DataTypes    
-link: [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/README.md)
+### Basic    
 
-Type Conversion
-link: 
+- [x] Code Structure [바로가기]
+- [x] Variable [바로가기]
+- [x] Strict Mode [바로가기]
+- [x] Global This [바로가기]
+- [x] Legacy Var [바로가기]
+- [x] DataTypes [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/README.md)
+- [x] Type Conversion [바로가기]
+
+---
+
+### Operations
+- [x] Operations (기본 연산자) [바로가기]
+- [x] Operations (비교 연산자) [바로가기]
 
 
+---
+### Condition
+- [x] Condition (if조건문) [바로가기]
+- [x] Condition (논리연산자) [바로가기]
+- [x] Condition (switch..case) [바로가기]
+- [x] Condition (nullish) [바로가기]
 
 
-
+---
+### Loop
+- [x] loop (while) [바로가기]
+- [x] loop (do..while) [바로가기]
+- [x] loop (for) [바로가기]
+- [x] loop (for...in) [바로가기]
+- [x] loop (for...of) [바로가기]
