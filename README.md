@@ -20,11 +20,11 @@
 ### Basic    
 
 - [x] Code Structure [바로가기]
-- [x] Variable [바로가기]
+- [x] Variable [Variable README.md] (https://github.com/dhwjdgh1122/core-js/blob/main/core/Variable.md)
 - [x] Strict Mode [바로가기]
 - [x] Global This [바로가기]
 - [x] Legacy Var [바로가기]
-- [x] DataTypes [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/README.md)
+- [x] DataTypes [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/DataTypes.md)
 - [x] Type Conversion [Type Conversion README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Type-Conversion.md)
 
 ---
