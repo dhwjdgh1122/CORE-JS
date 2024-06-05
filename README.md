@@ -21,7 +21,7 @@
 
 - [x] Code Structure [바로가기]
 - [x] Variable [Variable README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/variable.md)
-- [x] Strict Mode [바로가기]
+- [x] Strict Mode [Strict Mode.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Strict%20Mode.md)
 - [x] Global This [바로가기]
 - [x] Legacy Var [바로가기]
 - [x] DataTypes [DataTypes README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/DataTypes.md)
