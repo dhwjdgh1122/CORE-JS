@@ -48,3 +48,4 @@ const product_Infomation = '';
 /* constant variables -------------------------------------------------- */
 // - 1년 기준 일(day)자 수 365
 const DAY_PER_YEAR = 365;
+
