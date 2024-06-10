@@ -37,7 +37,7 @@
 ---
 ### Condition
 - [x] Condition (if조건문) [Conditions1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Conditions1.md)
-- [x] Condition (논리연산자) []
+- [x] Condition (논리연산자) [Conditions2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Conditions2.md)
 - [x] Condition (switch..case) []
 - [x] Condition (nullish) []
 
