@@ -44,8 +44,4 @@
 
 ---
 ### Loop
-- [x] loop (while) []
-- [x] loop (do..while) []
-- [x] loop (for) []
-- [x] loop (for...in) []
-- [x] loop (for...of) []
+- [x] loop (while,for,do..while,for...in,for...of) [loop README.md]
