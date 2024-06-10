@@ -45,3 +45,7 @@
 ---
 ### Loop
 - [x] loop (while,for,do..while,for...in,for...of) [loop README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/loop.md)
+
+---
+### Function
+- [x] function (함수선언문) [function README.md] ()
