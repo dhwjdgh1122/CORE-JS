@@ -48,4 +48,4 @@
 
 ---
 ### Function
-- [x] function (함수선언문) [function README.md] ()
+- [x] function (함수선언문) [function README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/function.md)
