@@ -48,4 +48,11 @@
 
 ---
 ### Function
-- [x] function (함수선언문) [function README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/function.md)
+- [x] function (함수선언문) [function1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/function1.md)
+- [x] function (함수표현식) [function2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/function2.md)
+- [x] function (함수표함수) [function3 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/function3.md)
+- [x] function (재귀함수) [function4 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/function4.md)
+
+---
+### Object
+- [x] object (객체) [object1 README.md]()
