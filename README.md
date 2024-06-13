@@ -30,8 +30,8 @@
 ---
 
 ### Operations
-- [x] Operations (기본 연산자) [Operations README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Operations.md)
-- [x] Operations (비교 연산자) [Operations README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Operations2.md)
+- [x] Operations (기본 연산자) [Operations1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Operations.md)
+- [x] Operations (비교 연산자) [Operations2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Operations2.md)
 
 
 ---
