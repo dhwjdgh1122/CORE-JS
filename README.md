@@ -55,4 +55,4 @@
 
 ---
 ### Object
-- [x] object (객체) [object1 README.md]()
+- [x] object (객체) [object1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Object1.md)
