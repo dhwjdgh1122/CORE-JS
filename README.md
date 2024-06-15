@@ -59,3 +59,13 @@
 - [x] object (copy by reference) [object2 .README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Object2.md)
 - [x] object (garbage collection) [object3 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Object3.md)
 - [x] object (method and this) [object4 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Object4.md)
+
+---
+### Prototype
+- [x] prototype (프로토타입의 상속) [prototype1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/prototype1.md)
+- [x] protytype (클래스)[prototype2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/prototype2.md)
+
+---
+### Closure
+- [x] Closure (클로저)[closure1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/closure1.md)
+- [x] Closure (시나리오)[closure2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/closure2.md)
