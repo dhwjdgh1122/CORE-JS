@@ -63,9 +63,9 @@
 ---
 ### Prototype
 - [x] prototype (프로토타입의 상속) [Prototype1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Prototype1.md)
-- [x] prototype (클래스)[Prototype2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/Prototype2.md)
+- [x] prototype (클래스) [Prototype2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Prototype2.md)
 
 ---
 ### Closure
-- [x] Closure (클로저)[closure1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/closure1.md)
-- [x] Closure (시나리오)[closure2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/closure2.md)
+- [x] Closure (클로저) [closure1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/closure1.md)
+- [x] Closure (시나리오) [closure2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/closure2.md)
