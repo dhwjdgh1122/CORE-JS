@@ -63,7 +63,7 @@
 ---
 ### Prototype
 - [x] prototype (프로토타입의 상속) [prototype1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Prototype1.md)
-- [x] protytype (클래스)[prototype2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/prototype2.md)
+- [x] protytype (클래스)[prototype2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/Prototype2.md)
 
 ---
 ### Closure
