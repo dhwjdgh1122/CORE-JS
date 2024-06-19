@@ -71,5 +71,4 @@
 
 ---
 ### Closure
-- [x] Closure (클로저) [Closure1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Closure1.md)
-- [x] Closure (시나리오) [Closure2 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Closure2.md)
+- [x] Closure (클로저, 시나리오) [Closure1 README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Closure1.md)
