@@ -1,115 +1,83 @@
-/* ----------------------- */
-/* Number Type             */
-/* ----------------------- */
+/* -------------------- */
+/* Array Type           */
+/* -------------------- */
+
+// 객체(Object) : 키(key)를 사용해 식별할 수 있는 값을 담은 집합 - `키:값의 집합`
+// 배열(Array) : 순서(index)가 있는 집합 - `값의 집합`
+
+// ※ 배열은 특별한 종류의 객체로 대괄호를 사용해 요소에 접근하는 방식은 객체 문법을 사용. 
+//   배열은 키(key)가 숫자(index)라는 점이 다름. 즉, 본질은 객체.
+//   순서에 따른 제어가 가능하도록 다양한 메서드와 length 프로퍼티를 언어에서 제공.
 
 
-// 1억 (million)
-// 0의 갯수가 많아 금액을 쉽게 파악하기 어렵습니다.
-let riches = 100000000;
+// 배열 선언
 
-// 1,000 단위 구분하듯 사용할 수 있을까요?
-riches = 100_000_000;
-
-// 숫자 옆에 `e`를 붙여 0의 갯수를 설정할 수 있습니다.
-riches = 1e8;
+let friends = '한울,재명,정민,유진,윤선,민혁,재림,신혜'.split(',');
 
 
-// 그렇다면 아래 작성된 숫자 값은 얼마일까요?
-riches = 1.45e6; // → 1.45 * 10 ** 6
+// 배열 요소의 총 갯수
 
-console.log( riches );
-
-// 작은 수도 `e`를 사용해 표현할 수 있습니다.
-riches = 1e-6; // → 1 / 10 ** 6
-console.log( riches );
-
-/* 어림수 ---------------------------------------------------------------- */
-
-let number = 90_127.53100032;
-
-// 내림
-let floor = Math.floor(number);
-console.log('floor : ',floor)
-
-// 반올림
-let round = Math.round(number);
-console.log('round : ',round)
-
-// 올림
-let ceil = Math.ceil(number);
-console.log('ceil : ',ceil)
-
-// 절삭(소수점 이하)
-let truncate = Math.trunc(number);
-console.log('truncate : ',truncate)
-
-// 난수
-let random = Math.random() * 10;
-console.log('random : ',random)
-
-// 여러 수 중, 최댓값
-let max = Math.max(30,50,100);
-console.log('max : ',max)
-
-// 여러 수 중, 최솟값
-let min = Math.min(-10,5,100,-9);
-console.log('min : ',min)
-
-// 거듭제곱
-let pow = Math.pow(2,53);
-console.log('pow : ',pow)
+// console.log( friends.length = 0 );
 
 
-// Math.sin()
-// Math.cos()
-// Math.tan()
-
-let count = 0;
-// setInterval(() => {
-  // console.log( Math.sin(++count) );
-// }, 10);
+// 배열 요소 변경
+friends[0] = '은선'
 
 
-// 최소, 최대 값 사이 난수 반환 함수
-let getRandomMinMax = (min,max) => {
-  return Math.round(Math.random() * (max - min) + min)
-};
-
-// let getRandomMinMax = (min,max) => Math.round(Math.random() * (max - min) + min)
-
-getRandomMinMax(10,20)
+// 배열 요소 추가
+let unshift = friends.unshift('희재');
+console.log( unshift );
 
 
-// 절댓값
+let push = friends.push('진용');
+console.log('push : ',push)
 
 
-const abs = Math.abs(-10);
-console.log('abs : ',abs)
+// 배열 요소 제거
+let shift;
+let pop;
+
+
+// 큐(queue) vs. 스택(stack)
+// 큐 FIFO (먼저 들어온 것이 먼저 나간다) ← queue ←
+// 스택 LIFO (나중에 들어온 것이 먼저 나간다) ↓ stack ↑
+
+
+// 배열 요소 순환(loop)
+// for 문, for ~ of문
+
+for(let i = 0, l = friends.length; i < l; i++){
+  // console.log(friends[i]);
+}
+
+const iter = friends[Symbol.iterator]()
+
+
+// Lazy Evaluation => 성능 최적화
+
+for(const name of iter){
+  console.log(name);
+}
+
+
+// 배열 복사
+// let copiedArray = [...friends];
+// let copiedArray = friends.slice();
+let copiedArray = Array.from(friends);
 
 
 
 
 
-/* 진법 ------------------------------------------------------------------ */
+// 다차원 배열
+// 행렬을 저장하는 용도
 
-// 16진수 0x
-//  8진수 0o
-//  2진수 0b
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
 
-// parseInt(string, base) → 진수 2 <= base <= 36
-// number.toString(base) → base 진수 변환 후 문자 값 반환
+// 행렬의 정중앙에 위치한 요소를 찾으려면?
 
-
-/* 컬러 변환 -------------------------------------------------------------- */
-
-const colorChip = {
-  red: 207,
-  green: 102,
-  blue: 13,
-};
-
-// colorChip의 red, green, blue 값을 변환해봅니다.
-
-// 1. 10진수 → 16진수 변환하기
-
-// 2. 16진수 → 10진수 변환하기
+matrix[1][1]

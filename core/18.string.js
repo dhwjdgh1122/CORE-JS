@@ -1,115 +1,166 @@
-/* ----------------------- */
-/* Number Type             */
-/* ----------------------- */
+/* -------------------- */
+/* String Type          */
+/* -------------------- */
+
+let message = 'Less is more.';
 
 
-// 1억 (million)
-// 0의 갯수가 많아 금액을 쉽게 파악하기 어렵습니다.
-let riches = 100000000;
+// length 프로퍼티
+let stringTotalLength = message.length;
 
-// 1,000 단위 구분하듯 사용할 수 있을까요?
-riches = 100_000_000;
+console.log( stringTotalLength );
 
-// 숫자 옆에 `e`를 붙여 0의 갯수를 설정할 수 있습니다.
-riches = 1e8;
+// 특정 인덱스의 글자 추출
+let extractCharacter = message[5];
 
+console.log('extractCharacter : ',extractCharacter)
 
-// 그렇다면 아래 작성된 숫자 값은 얼마일까요?
-riches = 1.45e6; // → 1.45 * 10 ** 6
+// enumerable // 열거 가능한
+// iterable // 반복 가능한
+// immutable // 불변의
+// mutable // 변경 가능한
+// mutant // 돌연변이
 
-console.log( riches );
+// const a = {...immutable} 
 
-// 작은 수도 `e`를 사용해 표현할 수 있습니다.
-riches = 1e-6; // → 1 / 10 ** 6
-console.log( riches );
-
-/* 어림수 ---------------------------------------------------------------- */
-
-let number = 90_127.53100032;
-
-// 내림
-let floor = Math.floor(number);
-console.log('floor : ',floor)
-
-// 반올림
-let round = Math.round(number);
-console.log('round : ',round)
-
-// 올림
-let ceil = Math.ceil(number);
-console.log('ceil : ',ceil)
-
-// 절삭(소수점 이하)
-let truncate = Math.trunc(number);
-console.log('truncate : ',truncate)
-
-// 난수
-let random = Math.random() * 10;
-console.log('random : ',random)
-
-// 여러 수 중, 최댓값
-let max = Math.max(30,50,100);
-console.log('max : ',max)
-
-// 여러 수 중, 최솟값
-let min = Math.min(-10,5,100,-9);
-console.log('min : ',min)
-
-// 거듭제곱
-let pow = Math.pow(2,53);
-console.log('pow : ',pow)
+// 문자열 중간 글자를 바꾸는 건 불가능 
+// (기존 문자 변경 대신, 새로운 문자를 생성해야 함)
+let immutableChangeCharacter = 'P' + message.slice(1);
 
 
-// Math.sin()
-// Math.cos()
-// Math.tan()
-
-let count = 0;
-// setInterval(() => {
-  // console.log( Math.sin(++count) );
-// }, 10);
+console.log(message);
 
 
-// 최소, 최대 값 사이 난수 반환 함수
-let getRandomMinMax = (min,max) => {
-  return Math.round(Math.random() * (max - min) + min)
-};
+// 부분 문자열 추출
+let slice = message.slice(4,-1);
+console.log('slice : ',slice)
 
-// let getRandomMinMax = (min,max) => Math.round(Math.random() * (max - min) + min)
+let subString = message.substring(2,5);
+console.log('subString : ',subString)
 
-getRandomMinMax(10,20)
-
-
-// 절댓값
+// let subStr = message.substr();
 
 
-const abs = Math.abs(-10);
-console.log('abs : ',abs)
+// 문자열 포함 여부 확인
+let indexOf = message.indexOf('is');
+console.log('indexOf : ',indexOf)
+
+
+function checkBrowser(){
+
+  const agent = window.navigator.userAgent.toLowerCase();
+  let browserName;
+
+  switch(true){
+    case agent.indexOf('edg') > -1 :
+      browserName = 'MS Edge'
+    break;
+    case agent.indexOf('chrome') > -1 && !!window.chrome :
+      browserName = 'Chrome'
+    break;
+    case agent.indexOf('safari') > -1 :
+      browserName = 'Safari'
+    break;
+    case agent.indexOf('firefox') > -1 :
+      browserName = 'Firefox'
+    break;
+    case agent.indexOf('trident') > -1 :
+      browserName = 'IE'
+    break;
+    default:
+      browserName = '무슨 브라우저 쓰세요..?'
+  }
+
+  return browserName
+
+}
+
+
+checkBrowser() // chrome
 
 
 
 
 
-/* 진법 ------------------------------------------------------------------ */
-
-// 16진수 0x
-//  8진수 0o
-//  2진수 0b
-
-// parseInt(string, base) → 진수 2 <= base <= 36
-// number.toString(base) → base 진수 변환 후 문자 값 반환
 
 
-/* 컬러 변환 -------------------------------------------------------------- */
+let lastIndexOf = message.lastIndexOf('s');
+console.log('lastIndexOf : ',lastIndexOf)
 
-const colorChip = {
-  red: 207,
-  green: 102,
-  blue: 13,
-};
 
-// colorChip의 red, green, blue 값을 변환해봅니다.
+let includes = message.includes('Less');
+console.log('includes : ',includes)
 
-// 1. 10진수 → 16진수 변환하기
 
-// 2. 16진수 → 10진수 변환하기
+let startsWith = message.startsWith('less');
+console.log('startsWith : ',startsWith)
+
+let endsWith = message.endsWith('more.');
+console.log('endsWith : ',endsWith)
+
+
+let str = '     a    b    c                 d         '
+
+// 공백 잘라내기
+let trimStart = str.trimStart();
+console.log('trimStart : ',trimStart)
+
+
+let trimEnd = str.trimEnd();
+console.log('trimEnd : ',trimEnd)
+
+
+let trim = str.trim();
+console.log('trim : ',trim)
+
+
+const replaceAll = str.replaceAll(' ','');
+console.log('replaceAll : ',replaceAll)
+
+
+const replace = str.replace(/\s*/g,'');
+console.log('replace : ',replace)
+
+
+
+// function trimText(string){
+  
+//   return string.replace(/\s*/g,'');
+
+// }
+
+
+const trimText = s => s.replace(/\s*/g,'');
+
+trimText(str) // abcd
+
+
+
+// 텍스트 반복
+let repeat = message.repeat(3);
+console.log('repeat : ',repeat)
+
+
+// 대소문자 변환
+let toLowerCase = message.toLowerCase();
+console.log('toLowerCase : ',toLowerCase)
+
+
+let toUpperCase = message.toUpperCase();
+console.log('toUpperCase : ',toUpperCase)
+
+
+console.clear()
+
+
+// 텍스트 이름 변환 유틸리티 함수
+function toCamelCase(string) {
+  return string.replace(/(\s|-|_)+./g, ($1) => $1.trim().replace(/(-|_)+/, '').toUpperCase())
+}
+
+
+
+function toPascalCase(string) {
+  let name = toCamelCase(string);
+  return name[0].toUpperCase() + name.slice(1);
+}
