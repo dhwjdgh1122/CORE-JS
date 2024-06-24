@@ -76,3 +76,8 @@
 ---
 ### OptionalChainning & wrapper
 - [x] OptionalChainning(옵셔널 체이닝) [OptionalChainning README.MD](https://github.com/dhwjdgh1122/core-js/blob/main/core/OptionalChainning.md)
+- [x] Primitive-Method(wrapper object) [Primitive-Methods README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Primitive-Methods.md)
+
+---
+### Number
+- [x] Number(number Type) [Number README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Number.md)
