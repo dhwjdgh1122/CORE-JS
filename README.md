@@ -83,3 +83,5 @@
 - [x] Number(number Type) [Number README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Number.md)
 
 ---
+### string
+- [x] String(string Type) [String README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/String.md)
