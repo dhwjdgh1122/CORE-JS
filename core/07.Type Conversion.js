@@ -21,7 +21,7 @@ console.log(typeof String(YEAR));
 
 // null
 
-// boolean
+// boolean/
 
 // string
 const numericString = "123";
