@@ -89,3 +89,4 @@
 ---
 ### Array
 - [x] Array(array Type) [Array README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Array.md)
+- [x] ArrayMethod(array Method) [ArrayMethod README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/ArrayMethod.md)
