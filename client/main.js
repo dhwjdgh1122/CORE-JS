@@ -3,43 +3,36 @@ class Button extends HTMLElement {
   constructor(){
     super();
 
-    this.button = document.querySelector('button');
+    // c-button의 쉐도우 돔을 열어줘 동시에 접근할수있는 권한이 부여됨
+    this.attachShadow({mode:'open'});
+
+    console.log(this.shadowRoot);
+
+     // 그리고 그 안에 내가 원하는 태그 집어 넣을거야
+     this.shadowRoot.innerHTML = `
+        <button>hello</button>
+     `
+
+
+
+
+
 
   }
 
   connectedCallback(){
-    this._render();
+
   }
 
   disconnectedCallback(){
 
   }
 
-  static get observedAttributes(){
-    return ['id'];
-  }
-
-  attributeChangedCallback(name,oldValue,newValue){
-    if(oldValue !== newValue){
-      this._render()
-    }
-  }
-
-  _render(){
-    this.button.textContent = this.id;
-  }
 
 }
 
 
 customElements.define('c-button',Button);
 
-
-
-const c = document.querySelector('c-button');
-
-let count = 0;
-
-c.addEventListener('click',()=>{
-  c.setAttribute('id',++count)
-})
+console.log(document.querySelector('c-button').shadowRoot.
+querySelector('button'));
