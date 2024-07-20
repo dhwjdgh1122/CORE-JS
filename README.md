@@ -94,3 +94,7 @@
 ---
 ### iterator protocol
 - [x] iterator(iterator) [iterator README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/iterator.md)
+
+---
+### 예외 처리
+- [x] Try..catch(예외처리) [Try..catch README.md](https://github.com/dhwjdgh1122/core-js/blob/main/core/Try..catch.md)
