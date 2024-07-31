@@ -3,9 +3,9 @@
 
 ---
 
-## `live-server`    
+## live-server    
 - `live-server`를 그냥 열어서 확인하면 되는데 왜 `json`에 다운해서 열었는지? 이유에 대해서    
-기존의 내가 자주 사용하던 `live-server`는 `vscode`의 확장 프로그램이다, 누군가가 그 파일을 달라고 했을 때, `vscode`만 깔려있는 사람은 확인을 못함 why? `live-server`가 다운로드 되지 않았으니까, 그래서 `live-server`를 다운받은 형태로 보내줘야함
+기존의 내가 자주 사용하던 `live-server`는 `vscode`의 확장 프로그램이다, 누군가가 그 파일을 달라고 했을 때, `vscode`만 깔려있는 사람은 확인을 못함 **why?** `live-server`가 다운로드 되지 않았으니까, 그래서 `live-server`를 다운받은 형태로 보내줘야함
 그래서 `json` 파일에 `npx live-server clien` 로 다운 받아 논거임
 결국 협업을 위해서이다
 
