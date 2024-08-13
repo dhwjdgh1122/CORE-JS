@@ -218,18 +218,6 @@ table.onclick = function(event) {
   });
 </script>
 ```
-첫 번째 카운터: <input type="button" value="1" data-counter>
-두 번째 카운터: <input type="button" value="2" data-counter>
-
-<script>
-  document.addEventListener('click', function(event) {
-
-    if (event.target.dataset.counter != undefined) { // 속성이 존재할 경우
-      event.target.value++;
-    }
-
-  });
-</script>
 
 버튼을 클릭하면 숫자가 증가한다. 접근방식에 대해 알아보자.
 
@@ -259,25 +247,6 @@ table.onclick = function(event) {
   });
 </script>
 ```
-
-<button data-toggle-id="subscribe-mail">
-  구독 폼 보여주기
-</button>
-
-<form id="subscribe-mail" hidden>
-  메일 주소: <input type="email">
-</form>
-
-<script>
-  document.addEventListener('click', function(event) {
-    let id = event.target.dataset.toggleId;
-    if (!id) return;
-
-    let elem = document.getElementById(id);
-
-    elem.hidden = !elem.hidden;
-  });
-</script>
 
 자바스크립트를 사용하지 않고도 요소에 토글 기능을 추가할 수 있다는 점에 주목하자. 태그에 `data-toggle-id` 속성만 추가하면 요소를 토글할 수 있다.
 
