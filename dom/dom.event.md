@@ -49,6 +49,7 @@ HTML 안의 `on<event>` 속성에 핸들러를 할당할 수 있다.
 
 아래 버튼을 클릭하면 함수 `countRabbits()`이 호출된다.
 
+  ```html
     <script>
       function countRabbits() {
         for(let i=1; i<=3; i++) {
@@ -58,15 +59,7 @@ HTML 안의 `on<event>` 속성에 핸들러를 할당할 수 있다.
     </script>
 
     <input type="button" onclick="countRabbits()" value="토끼를 세봅시다!">
-<script>
-  function countRabbits() {
-    for(let i=1; i<=3; i++) {
-      alert(`토끼 ${i}마리`);
-    }
-  }
-</script>
-
-<input type="button" onclick="countRabbits()" value="토끼를 세봅시다!">
+  ```
 
 
 HTML 속성은 대소문자를 구분하지 않기 때문에, `ONCLICK`은 `onClick`이나 `onCLICK`과 동일하게 작동한다. 하지만 속성값은 대개 `onclick` 같이 소문자로 작성한다.
@@ -77,19 +70,16 @@ DOM 프로퍼티 `on<event>`을 사용해도 핸들러를 할당할 수 있다.
 
 `elem.onclick`을 사용한 예시
 
+    ```html
     <input id="elem" type="button" value="클릭해 주세요.">
     <script>
       elem.onclick = function() {
         alert('감사합니다.');
       };
     </script>
+    ```
 
-<input id="elem" type="button" value="클릭해 주세요.">
-<script>
-  elem.onclick = function() {
-    alert('감사합니다.');
-  };
-</script>
+
 
 핸들러를 HTML 속성을 사용해 할당하면, 브라우저는 속성값을 이용해 새로운 함수를 만든다. 그리고 생성된 함수를 DOM 프로퍼티에 할당한다.
 
@@ -99,26 +89,22 @@ DOM 프로퍼티 `on<event>`을 사용해도 핸들러를 할당할 수 있다.
 
 1. HTML만 사용하는 방법
 
-        <input type="button" onclick="alert('클릭!')" value="클릭해 주세요.">
-
+```html
 <input type="button" onclick="alert('클릭!')" value="클릭해 주세요.">
+```
 
 
 
 2. HTML과 자바스크립트를 함께 사용하는 방법
 
-        <input type="button" id="button" value="클릭해 주세요.">
+```html
+ <input type="button" id="button" value="클릭해 주세요.">
         <script>
           button.onclick = function() {
             alert('클릭!');
           };
         </script>
-<input type="button" id="button" value="클릭해 주세요.">
-<script>
-  button.onclick = function() {
-    alert('클릭!');
-  };
-</script>
+```
 
 
 두 예시의 유일한 차이점은 바로 첫 번째 예시에서는 HTML 속성을 사용해 button.onclick을 초기화하고 두 번째 예시에서는 스크립트를 사용한다는 것이다.
@@ -127,19 +113,14 @@ DOM 프로퍼티 `on<event>`을 사용해도 핸들러를 할당할 수 있다.
 
 아래 예시와 같이 핸들러를 하나 더 추가하면, 기존 핸들러는 덮어씌워진다.
 
-    <input type="button" id="elem" onclick="alert('이전')" value="클릭해 주세요.">
+```html
+<input type="button" id="elem" onclick="alert('이전')" value="클릭해 주세요.">
     <script>
       elem.onclick = function() { // 기존에 작성된 핸들러를 덮어씀
         alert('이후'); // 이 경고창만 보입니다.
       };
     </script>
-
-<input type="button" id="elem" onclick="alert('이전')" value="클릭해 주세요.">
-<script>
-  elem.onclick = function() { // 기존에 작성된 핸들러를 덮어씀
-    alert('이후'); // 이 경고창만 보입니다.
-  };
-</script>
+```
 
 핸들러를 제고하고 싶다면 `elem.onclick = null `같이 null을 할당하면 된다.
 
@@ -150,8 +131,10 @@ DOM 프로퍼티 `on<event>`을 사용해도 핸들러를 할당할 수 있다.
 
 아래 예시의 `this.innerHTML`에서 this는 `button` 이므로 버튼을 클릭하면 버튼 안의 콘텐츠가 얼럿창에 출력된다.
 
-    <input type="button" onclick="alert('클릭!')" value="클릭해 주세요.">
-<input type="button" onclick="alert('클릭!')" value="클릭해 주세요.">
+```html
+ <input type="button" onclick="alert('클릭!')" value="클릭해 주세요.">
+ ```
+
 
 ## 자주 하는 실수
 
@@ -159,41 +142,52 @@ DOM 프로퍼티 `on<event>`을 사용해도 핸들러를 할당할 수 있다.
 
 이미 존재하는 함수를 직접 핸들러에 할당하는 예시를 살펴보자
 
-    function sayThanks() {
+```js
+function sayThanks() {
       alert('감사합니다!');
     }
 
     elem.onclick = sayThanks;
 
+```
+
 이때 함수는 `sayThanks` 처럼 할당해야 한다. `sayThanks()`를 할당하면 동작하지 않는다.
 
-    // 올바른 방법
+```js
+// 올바른 방법
     button.onclick = sayThanks;
 
     // 틀린 방법
     button.onclick = sayThanks();
+```
 
 `sayThanks()` 같이 괄호를 덧붙이는 것은 함수를 호출하겠다는 것을 의미한다. 위 예시의 마지막 줄처럼 sayThanks()를 프로퍼티에 할당하면 함수 호출의 결과값이 할당된다. 함수 `sayThanks`가 아무것도 반환하지 않는다면 `onclick` 프로퍼티엔 `undefined`이 할당되므로 이벤트가 원하는 대로 동작하지 않는다.
 
 그런데, HTML 속성값에는 괄호가 있어야 한다.
 
-    <input type="button" id="button" onclick="sayThanks()">
+```html
+<input type="button" id="button" onclick="sayThanks()">
+```
 
 브라우저는 속성값을 읽고, 속성값을 함수 본문으로 하는 핸들러 함수를 만들기 때문에 이런 차이가 발생한다.
 
 브라우저는 `onclick` 프로퍼티에 새로운 함수를 할당한다.
 
-    button.onclick = function() {
+```js
+  button.onclick = function() {
       sayThanks(); // 속성값
     };
+```
 
 `setAttribute`로 핸들러를 할당하지 말 것
 
 아래 코드는 동작하지 않는다.
 
-    // <body>를 클릭하면 에러가 발생합니다.
+```js
+ // <body>를 클릭하면 에러가 발생합니다.
     // 속성은 항상 문자열이기 때문에, 함수가 문자열이 되어버리기 때문입니다.
     document.body.setAttribute('onclick', function() { alert(1) });
+```
 
 **DOM 프로퍼티는 대소문자를 구분한다.**
 
@@ -207,15 +201,19 @@ HTML 속성과 DOM 프로퍼티를 이용한 이벤트 핸들러 할당 방식�
 
 두 개의 이벤트 핸들러가 필요할 것이다. 하지만 기존 방법으로는 프로퍼티가 덮어씌워 진다는 문제가 있다.
 
-    input.onclick = function() { alert(1); }
+```js
+input.onclick = function() { alert(1); }
     // ...
     input.onclick = function() { alert(2); } // 이전 핸들러를 덮어씀
+```
 
 웹 표준에 관여하는 개발자들은 오래전부터 이 문제를 인지하고, `addEventListener` 와 `removeEventListener` 라는 특별한 메서드를 이용해 핸들러를 관리하자는 대안을 제시했다. 핸들러를 여러 개 할당할 수 있도록이다.
 
 문법은 아래와 같다.
 
-    element.addEventListener(event, handler, [options]);
+```js
+element.addEventListener(event, handler, [options]);
+```
 
 **event**    
 이벤트 이름(예:`"click"`)
@@ -232,7 +230,9 @@ HTML 속성과 DOM 프로퍼티를 이용한 이벤트 핸들러 할당 방식�
 
 핸들러 삭제는 `removeEventListener`로 한다.
 
-    element.removeEventListener(event, handler, [options]);
+```js
+ element.removeEventListener(event, handler, [options]);
+ ```
 
 
 **삭제는 동일한 함수만 할 수 있다**    
@@ -240,27 +240,32 @@ HTML 속성과 DOM 프로퍼티를 이용한 이벤트 핸들러 할당 방식�
 
 아래와 같이 이벤트를 할당하고 삭제하면 원하는 대로 동작하지 않는다.
 
-    elem.addEventListener( "click" , () => alert('감사합니다!'));
+```js
+elem.addEventListener( "click" , () => alert('감사합니다!'));
     // ....
     elem.removeEventListener( "click", () => alert('감사합니다!'));
+```
 
 `removeEventListener`를 썼지만, 핸들러는 지워지지 않는다. `removeEventListener`가 `addEventListener`를 사용해 할당한 함수와 다른 함수를 받고 있기 때문이다. 함수는 똑같게 생겼지만 그럼에도 불구하고 다른 함수이기 때문에 이런 문제가 발생한다.
 
 위 예시를 제대로 고치면 다음과 같다.
 
-    function handler() {
+```js
+function handler() {
       alert( '감사합니다!' );
     }
 
     input.addEventListener("click", handler);
     // ....
     input.removeEventListener("click", handler);
+```
 
 변수에 핸들러 함수를 저장해 놓지 않으면 핸들러를 지울 수 없다는 것을 항상 기억해 놓아야 한다. 이렇게 하지 않으면 `addEventListener`로 할당한 핸들러를 '불러올'수 없다.
 
 `addEventListener`를 여러 번 호출하면 아래와 같이 핸들러를 여러 개 붙일 수 있다.
 
-    <input id="elem" type="button" value="클릭해 주세요."/>
+```js
+ <input id="elem" type="button" value="클릭해 주세요."/>
 
     <script>
       function handler1() {
@@ -275,6 +280,7 @@ HTML 속성과 DOM 프로퍼티를 이용한 이벤트 핸들러 할당 방식�
       elem.addEventListener("click", handler1); // 감사합니다!
       elem.addEventListener("click", handler2); // 다시 한번 감사합니다!
     </script>
+```
 
 **어떤 이벤트는 `addEventListener`를 써야만 동작한다.
 
@@ -282,7 +288,8 @@ DOM 프로퍼티에 할당할 수 없는 이벤트가 몇몇 있다 이런 이�
 
 문서를 읽고 DOM 트리 생성이 완료되었을 때 트리거되는 이벤트인 `DOMContentLoaded`가 대표적인 예이다.
 
-    // 이 얼럿창은 절대 뜨지 않습니다.
+```js
+// 이 얼럿창은 절대 뜨지 않습니다.
     document.onDOMContentLoaded = function() {
       alert("DOM이 완성되었습니다.");
     };
@@ -291,6 +298,7 @@ DOM 프로퍼티에 할당할 수 없는 이벤트가 몇몇 있다 이런 이�
     document.addEventListener("DOMContentLoaded", function() {
       alert("DOM이 완성되었습니다.");
     });
+```
 
 이처럼 `addEventListener`는 좀 더 범용적이다. `addEventListener`를 써야만 동작하는 이벤트들은 예외적인 경우라고 생각하면 된다.
 
@@ -302,7 +310,8 @@ DOM 프로퍼티에 할당할 수 없는 이벤트가 몇몇 있다 이런 이�
 
 아래는 이벤트 객체로부터 포인터 좌표 정보를 얻어내는 예시이다.
 
-    <input type="button" value="클릭해 주세요." id="elem">
+```html
+<input type="button" value="클릭해 주세요." id="elem">
 
     <script>
       elem.onclick = function(event) {
@@ -311,6 +320,7 @@ DOM 프로퍼티에 할당할 수 없는 이벤트가 몇몇 있다 이런 이�
         alert("이벤트가 발생한 곳의 좌표는 " + event.clientX + ":" + event.clientY +"입니다.");
       };
     </script>
+```
 
 `이벤트` 객체에서 지원하는 프로퍼티 중 일부는 다음과 같다.
 
@@ -329,8 +339,10 @@ DOM 프로퍼티에 할당할 수 없는 이벤트가 몇몇 있다 이런 이�
 
 HTML에서 핸들러를 할당한 경우에도 아래와 같이 `event` 객체를 사용할 수 있다.
 
-    <input type="button" onclick="alert(event.type)" value="이벤트 타입">
-<input type="button" onclick="alert(event.type)" value="이벤트 타입">
+```html
+  <input type="button" onclick="alert(event.type)" value="이벤트 타입">
+  ```
+
 
 브라우저는 속서을 읽고 `function(event) { alert(event.type)} ` 같은 핸들러를 만들어 내기 때문이다. 생성된 핸들러 함수의 첫 번째 인수는 `"event"`로 불리고, 함수 본문은 속성값 가져온다.
 
@@ -338,7 +350,8 @@ HTML에서 핸들러를 할당한 경우에도 아래와 같이 `event` 객체�
 
 `addEventListener`를 사용하면 함수뿐만 아니라 객체를 이벤트 핸들러로 할당할 수 있다. 이벤트가 발생하면 객체에 구현한 `handleEvent` 메서드가 호출된다.
 
-    <button id="elem">클릭해 주세요.</button>
+```html
+ <button id="elem">클릭해 주세요.</button>
 
     <script>
       let obj = {
@@ -349,12 +362,14 @@ HTML에서 핸들러를 할당한 경우에도 아래와 같이 `event` 객체�
 
       elem.addEventListener('click', obj);
     </script>
+```
 
 `addEventListener`가 인수로 객체 형태의 핸들러를 받으면 이벤트 발생 시 `obj.handleEvent(event)`가 호출된다.
 
 클래스를 사용할 수도 있다.
 
-    <button id="elem">클릭해 주세요.</button>
+```html
+ <button id="elem">클릭해 주세요.</button>
 
     <script>
       class Menu {
@@ -374,12 +389,14 @@ HTML에서 핸들러를 할당한 경우에도 아래와 같이 `event` 객체�
       elem.addEventListener('mousedown', menu);
       elem.addEventListener('mouseup', menu);
     </script>
+```
 
 위 예시에선 하나의 객체에서 두 개의 이벤트를 처리하고 있다. 이때 주의할 점은 `addEventListener` 를 사용할 때는 요소에 타입을 정확히 명시해 주어야 한다는 점이다. 위 예시에서 `menu` 객체는 오직 `mousedown`와 `mouseup` 이벤트에만 응답하고, 다른 타입의 이벤트에는 응답하지 않는다.
 
 `handleEvent` 메서드가 모든 이벤트를 처리할 필요는 없다. 이벤트 관련 메서드를 `handleEvent`에서 호출해서 사용할 수도 있다. 
 
-    <button id="elem">클릭해 주세요.</button>
+```js
+<button id="elem">클릭해 주세요.</button>
 
     <script>
       class Menu {
@@ -402,7 +419,7 @@ HTML에서 핸들러를 할당한 경우에도 아래와 같이 `event` 객체�
       elem.addEventListener('mousedown', menu);
       elem.addEventListener('mouseup', menu);
     </script>
-
+```
 이벤트 핸들러가 명확히 분리되었기 때문에 코드 변경이 원활해졌다.
 
 ## 요약
