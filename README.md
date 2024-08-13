@@ -17,4 +17,5 @@
 ## Events (with UI)
 
 - [x] DOM event (브라우저 이벤트) [DOM event README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/dom.event.md)
-- [x] DOM bubbling & capturing (버블링과 캡쳐링) [DOM event README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/dom.bubbling & capturing.md)
+- [x] DOM bubbling & capturing (버블링과 캡쳐링) [DOM bubbling & capturing README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/dom.bubble%20%26%20capturing.md)
+
