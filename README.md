@@ -13,3 +13,7 @@
 - [x] DOM attribute (속성과 프로퍼티) [DOM attribute README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/dom.attribute.md)
 - [x] DOM manipulation (문서 수정, 요소 생성 삽입) [DOM manipulation README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/dom.manipulation.md)
 - [x] DOM style (스타일과 클래스) [DOM style README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/dom.style.md)
+
+## Events (with UI)
+
+- [x] DOM event (브라우저 이벤트) [DOM event README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/dom.event.md)
