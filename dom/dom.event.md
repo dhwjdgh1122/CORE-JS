@@ -70,14 +70,14 @@ DOM 프로퍼티 `on<event>`을 사용해도 핸들러를 할당할 수 있다.
 
 `elem.onclick`을 사용한 예시
 
-    ```html
-    <input id="elem" type="button" value="클릭해 주세요.">
+```html
+<input id="elem" type="button" value="클릭해 주세요.">
     <script>
       elem.onclick = function() {
         alert('감사합니다.');
       };
     </script>
-    ```
+```
 
 
 
@@ -230,6 +230,7 @@ element.addEventListener(event, handler, [options]);
 
 핸들러 삭제는 `removeEventListener`로 한다.
 
+
 ```js
  element.removeEventListener(event, handler, [options]);
  ```
@@ -264,7 +265,7 @@ function handler() {
 
 `addEventListener`를 여러 번 호출하면 아래와 같이 핸들러를 여러 개 붙일 수 있다.
 
-```js
+```html
  <input id="elem" type="button" value="클릭해 주세요."/>
 
     <script>
@@ -395,7 +396,7 @@ HTML에서 핸들러를 할당한 경우에도 아래와 같이 `event` 객체�
 
 `handleEvent` 메서드가 모든 이벤트를 처리할 필요는 없다. 이벤트 관련 메서드를 `handleEvent`에서 호출해서 사용할 수도 있다. 
 
-```js
+```html
 <button id="elem">클릭해 주세요.</button>
 
     <script>
