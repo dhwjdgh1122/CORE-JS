@@ -1,6 +1,6 @@
 [core 자바스크립트 저장소](https://github.com/dhwjdgh1122/core-js/tree/main)
 
-# DOM 학습 저장소
+# DOM 학습 저장소.
 
 
 ## BOM API
