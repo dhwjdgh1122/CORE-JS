@@ -25,7 +25,7 @@
 ## 비동기 통신
 
 - [x] Call back (콜백) [callback README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/callback.md)
-- [x] promise (프로미스) [promise README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/promise.md)
-- [x] promise chaining (프로미스 체이닝) [promise chaining README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/promise.chaining.md)
+- [x] promise (프라미스) [promise README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/promise.md)
+- [x] promise chaining (프라미스 체이닝) [promise chaining README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/promise.chaining.md)
 
 
