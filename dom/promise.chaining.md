@@ -82,3 +82,22 @@ promise.then(function(result) {
 이런 식으로 한 프라미스에 여러 개의 핸들러를 등록해서 사용하는 경우는 거의 없다. 프라미스는 주로 체이닝을 해서 사용한다.
 
 ## 프라미스 반환하기
+
+.`then(handler)`에 사용된 핸들러가 프라미스를 생성하거나 반환하는 경우도 있다.
+
+이 경우 이어지는 핸들러는 프라미스가 처리될 때까지 기다리다가 처리가 완료되면 그 결과를 받는다.
+
+```js
+new Promise(function(resolve, reject) {
+
+  setTimeout(() => resolve(1), 1000);
+
+
+}).then(function(result) {
+
+  alert(result); // 1
+
+  return new Promise((resolve, reject) => { // (*)
+    setTimeout (() => resolve)
+  })
+})
