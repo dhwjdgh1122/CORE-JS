@@ -101,3 +101,115 @@ new Promise(function(resolve, reject) {
     setTimeout (() => resolve)
   })
 })
+```
+
+예시에서 첫 번째 `then`은 `1`을 출력하고 `new Promise(...)`을 반환(`(*)`)한다.
+
+1초 후 이 프라미스가 이행되고 그 결과 (`resolve`의 인수인 `result * 2`)는 두 번째 `.then`으로 전달된다. 두 번째 핸들러 (`(**)`)는 `2`를 출력하고 동일한 과정이 반복된다.
+
+따라서 얼럿 창엔 이전 예시와 동일하게 1,2,4가 차례대로 출력된다. 다만 얼럿 창 사이에 1초의 딜레이가 생긴다.
+
+이렇게 핸들러 안에서 프라미스를 반환하는 것도 비동기 작업 체이닝을 가능하게 해준다.
+
+`loadScript` 개선하기
+
+학습한 기능을 사용해 프라미스를 사용해 정의한 `loadScript`(스크립트를 순차적으로 불러주는)를 개선해 보자.
+
+```js
+loadScript("/article/promise-chaining/one.js")
+  .then(function(script) {
+    return loadScript("/article/promise-chaining/two.js");
+  })
+  .then(function(script) {
+    return loadScript("/article/promise-chaining/three.js");
+  })
+  .then(function(script) {
+    // 불러온 스크립트 안에 정의된 함수를 호출해
+    // 실제로 스크립트들이 정상적으로 로드되었는지 확인합니다.
+    one();
+    two();
+    three();
+  });
+```
+
+화살표 함수를 사용하면 아래와 같이 코드를 줄일 수도 있다.
+
+```js
+loadScript("/article/promise-chaining/one.js")
+  .then(script => loadScript("/article/promise-chaining/two.js"))
+  .then(script => loadScript("/article/promise-chaining/three.js"))
+  .then(script => {
+    // 스크립트를 정상적으로 불러왔기 때문에 스크립트 내의 함수를 호출할 수 있습니다.
+    one();
+    two();
+    three();
+  });
+```
+
+`loadScript`를 호출할 때마다 프라미스가 반환되고 다음 `.then`은 이 프라미스가 이행되었을 때 실행된다. 이후에 다음 스크립트를 로딩하기 위한 초기화가 진행된다. 스크립트는 이런 과정을 거쳐 순차적으로 로드된다.
+
+체인에 더 많은 비동기 동작을 추가할 수도 있는데, 추가 작업이 많아져도 코드가 오른쪽으로 길어지지 않고 아래로만 증가해서 '멸망'의 피라미드가 만들어지지 않는다.
+
+한편, 아래와 같이 각 `loadScript`에 `.then`을 바로 붙일 수도 있다.
+
+```js
+loadScript("/article/promise-chaining/one.js").then(script1 => {
+  loadScript("/article/promise-chaining/two.js").then(script2 => {
+    loadScript("/article/promise-chaining/three.js").then(script3 => {
+      // 여기서 script1, script2, script3에 정의된 함수를 사용할 수 있습니다.
+      one();
+      two();
+      three();
+    });
+  });
+});
+```
+
+이렇게 `.then`을 바로 붙여도 동일한 동작(스크립트 세 개를 순차적으로 불러오는 작업)을 수행한다. 하지만 코드가 '오른쪽으로' 길어졌다. 콜백에서 언급한 문제와 동일한 문제가 발생한다.
+
+체이닝에 대해 잘 모른다면 위 코드처럼 작성할 수 있다. 그러나 대개 체이닝이 선호된다.
+
+중첩 함수에서 외부 스코프에 접근할 수 있기 때문에 `.then`을 바로 쓰는 게 괜찮은 경우도 있다. 위 예제에서 가장 깊은 곳에 있는 중첩 콜백은 `script1`, `script2`, `script3` 안에 있는 변수 모드에 접근할 수 있다. 이런 예외 상황이 있다.
+
+**thenable**
+
+핸들러는 프라미스가 아닌 `thenable` 이라 불리는 객체를 반환하기도 한다. `.then`이라는 메서드를 가진 객체는 모두 `thenable` 객체라고 부르는데, 이 객체는 프라미스와 같은 방식으로 처리된다.
+
+'thenable'객체에 대한 아이디어는 서드파티 라이브러리가 '프라미스와 호환 가능한' 자체 객체를 구현할 수 있다는 점에서 나왔다. 이 객체들엔 자체 확장 메서드가 구현되어 있겠지만 `.then`이 있기 때문에 네이티브 프라미스와도 호환 가능하다.
+
+```js
+class Thenable {
+  constructor(num) {
+    this.num = num;
+  }
+  then(resolve, reject) {
+    alert(resolve); // function() { 네이티브 코드 }
+    // 1초 후 this.num*2와 함께 이행됨
+    setTimeout(() => resolve(this.num * 2), 1000); // (**)
+  }
+}
+
+new Promise(resolve => resolve(1))
+  .then(result => {
+    return new Thenable(result); // (*)
+  })
+  .then(alert); // 1000밀리 초 후 2를 보여줌
+```
+
+자바스크립트는 `(*)`로 표시한 줄에서 `.then` 핸들러가 반환한 객체를 확인한다. 이 객체에 호출 가능한 메서드 `then`이 있으면 `then`이 호출된다. `then`은 `resolve`와 ``reject`라는 네이티브 함수를 인수로 받고, 둘 중 하나가 호출될 때까지 기다린다. 위 코드에서 `resolve(2)`는 1초 후에 호출된다. (`(**)`), 호출 후 결과는 체인을 따라 아래로 전달된다.
+
+이런 식으로 구현하면 `Promise`를 상속받지 않고도 커스텀 객체를 사용해 프라미스 체이닝을 만들 수 있다.
+
+## fetch와 체이닝 함께 응용하기
+
+프론트 단에선, 네트워크 요청 시 프라미스를 자주 사용한다.
+
+메서드 fetch를 사용해 원격 서버에서 사용자 정보를 가져온다. `fetch`엔 다양한 선택 매개변수가 있는데 기본 문법만 살펴보자.
+
+```js
+let promise = fetch(url);
+```
+
+위 코드를 실행하면 `url`에 네트워크 요청을 보내고 프라미스를 반환한다. 원격 서버가 헤더와 함께 응답을 보내면, 프라미스는 `response` 객체와 함께 이행된다. 그런데 이때 response 전체가 완전히 다운로드되기 전에 프라미스는 이행 상태가 되어버린다.
+
+응답이 완전히 종료되고, 응답 전체를 읽으려면 메서드 `response.text()`를 호출해야 한다.
