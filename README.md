@@ -28,5 +28,6 @@
 - [x] promise (프라미스) [promise README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/promise.md)
 - [x] promise chaining (프라미스 체이닝) [promise chaining README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/promise.chaining.md)
 - [x] async & await (어싱크 어웨이트) [async & await README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/async%20%26%20await.md)
+- [x] fetch (프라미스 체이닝) [fetch README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/fetch.md)
 
 
