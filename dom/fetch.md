@@ -301,4 +301,4 @@ fetch(url, options)
 - `headers` - 요청 헤드가 담긴 객체
 - `body` - 보내려는 데이터로 `string`이나 `FormData`, `BufferSource`, `Blob`, `UrlSearchParams` 객체 형태
 
-fetc
+fet
