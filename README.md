@@ -34,4 +34,4 @@
 ## 웹 컴포넌트 API
 - [x] Web Components (웹 컴포넌트) [Web-Components README.md](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/Web-components.md)
 
-web co
+- [x] Custom Elements (커스텀 엘리먼트) [Custom-Elements](https://github.com/dhwjdgh1122/core-js/blob/dom/dom/Custom-Elements.md)
