@@ -61,3 +61,51 @@ customElements.define("my-element", MyElement);
 이제 `<my-element>` 태그를 가진 모든 HTML 엘리먼트에 대해 MyElement의 인스턴스가 생성되고 앞에서 언급한 메서드가 호출된다. 또한 JavaScript에서 `document.createElement('my-element')`를 사용할 수 있다.
 
 커스텀 엘리먼트의 이름은 반드시 **하이픈(-)**을 포함해야 한다. 내장된 HTML 엘리먼트와 커스텀 엘리먼트간에 이름 충돌이 없도록 보장하기 위함.
+
+## 예시 코드 : time-formatted
+
+예를 들어, HTML에는 날짜/시간을 위한 `<time>` 엘리먼트가 이미 존재하지만 자체적으로 어떠한 서식을 제공하지는 않는다.
+
+우리는 시간을 멋지게 표시하는 형태로 만들기 위해 `<time-formatted>` 엘리먼트를 만들어보자.
+
+```js
+<script>
+class TimeFormatted extends HTMLElement { // (1)
+
+  connectedCallback() {
+    let date = new Date(this.getAttribute('datetime') || Date.now());
+
+    this.innerHTML = new Intl.DateTimeFormat("default", {
+      year: this.getAttribute('year') || undefined,
+      month: this.getAttribute('month') || undefined,
+      day: this.getAttribute('day') || undefined,
+      hour: this.getAttribute('hour') || undefined,
+      minute: this.getAttribute('minute') || undefined,
+      second: this.getAttribute('second') || undefined,
+      timeZoneName: this.getAttribute('time-zone-name') || undefined,
+    }).format(date);
+  }
+
+}
+
+customElements.define("time-formatted", TimeFormatted); // (2)
+</script>
+
+<!-- (3) -->
+<time-formatted datetime="2019-12-01"
+  year="numeric" month="long" day="numeric"
+  hour="numeric" minute="numeric" second="numeric"
+  time-zone-name="short"
+></time-formatted>
+```
+
+위 코드에서 (1)은 TimeFormatted 클래스를 정의하고, (2)는 "`time-formatted`"라는 이름으로 이를 커스텀 엘리먼트로 등록한다.
+(3)에서는 `<time-formatted>` 엘리먼트를 사용하면서 속성을 설정하여 시간을 원하는 형식으로 표시할 수 있다.
+
+해당 클래스에는 `connectedCallback()`이라는 메서드가 하나뿐이다. 브라우저는 `<time-formatted>` 엘리먼트가 페이지에 추가될 때 이 메서드를 호출하며, 내장된 `Intl.DateTimeformat` 데이터 포메터를 사용하여 브라우저 간에 잘 지원되는 방식으로 시간을 멋지게 형식화하여 표시한다.
+
+새로운 엘리먼트를 `customElements.define(tag, class)`로 등록해야 한다. 그러면 어디서든 사용할 수 있다.
+
+
+
+## 커스텀 엘리먼트 업그레이드
